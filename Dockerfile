@@ -14,5 +14,3 @@ RUN apk --no-cache add ca-certificates shadow
 # for use docker daemon via mounted /var/run/docker.sock
 RUN addgroup -S docker && adduser -S -G docker dockle && usermod -aG root dockle
 USER dockle
-
-ENTRYPOINT ["dockle"]
