@@ -10,7 +10,3 @@ FROM alpine:3.9
 COPY --from=builder /dockle /usr/local/bin/dockle
 RUN chmod +x /usr/local/bin/dockle
 RUN apk --no-cache add ca-certificates shadow
-
-# for use docker daemon via mounted /var/run/docker.sock
-RUN addgroup -S docker && adduser -S -G docker dockle && usermod -aG root dockle
-USER dockle
